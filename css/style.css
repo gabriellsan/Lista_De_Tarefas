@@ -54,6 +54,16 @@ main {
     height: 5em;
     width: 100%;
     box-shadow: 0 0 20px #ccc;
+    margin-bottom: 1em;
+}
+
+.item.clicado {
+    background: #D4F6D9;
+}
+
+.item.clicado .item-name {
+    text-decoration: line-through;
+    color: gray;
 }
 
 .item-icone {
@@ -69,7 +79,6 @@ main {
 }
 .item-button {
     flex: 25%;
-
 }
 
 .deletar {
@@ -82,4 +91,9 @@ main {
     padding: 0.7em;
     height: 5em;
     width: 100%;
+}
+
+.check-circle {
+    background-color: green;
+    border-radius: 50%;
 }
