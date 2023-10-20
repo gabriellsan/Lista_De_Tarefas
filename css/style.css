@@ -56,6 +56,10 @@ main {
     margin-bottom: 1em;
 }
 
+.item:hover {
+    cursor: pointer;
+}
+
 .item.clicado {
     background: #D4F6D9;
 }
@@ -93,7 +97,13 @@ main {
     width: 100%;
 }
 
+.deletar:hover {
+    cursor: pointer;
+    background: rgba(255, 0, 0, 0.616);
+}
+/* Arrumar classe abaixo */
 .check-circle {
     background-color: green;
     border-radius: 50%;
+    src: url('./assets/check_circle_black_24dp.svg');
 }

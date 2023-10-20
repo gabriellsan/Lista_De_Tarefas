@@ -12,14 +12,14 @@ btnAdd.addEventListener('click', () => {
         ++cont;
 
         let novoItem = ` <div id="${cont}" class="item">
-            <div class="item-icone">
-                <img src="./assets/radio_button_unchecked_black_24dp.svg" alt="">
+            <div onclick="marcarTarefa(${cont})"  class="item-icone">
+                <img id="imagem_${cont}" class="circle-outline"  src="./assets/radio_button_unchecked_black_24dp.svg" alt="">
             </div>
-            <div class="item-name">
+            <div onclick="marcarTarefa(${cont})" class="item-name">
                 ${valorInput}
             </div>
             <div class="item-button">
-                <button class="deletar">
+                <button onclick="deletar(${cont})" id="delete" class="deletar">
                     <img src="./assets/delete_black_24dp.svg" alt="">delete
                 </button>
             </div>
@@ -43,3 +43,29 @@ input.addEventListener('keyup', (e) => {
     }
 });
 
+
+function deletar(id){
+    var tarefa = document.getElementById(id);
+    tarefa.remove();
+    cont = 0;
+}
+
+function marcarTarefa(id) {
+    var item = document.getElementById(id);
+    var classe = item.getAttribute('class');
+
+    if(classe === "item"){
+        item.classList.add('clicado');
+        var img = document.getElementById('imagem_' + id);
+        img.classList.remove('circle-outline');
+        img.classList.add('check-circle ');
+
+        //consertar erro;
+        item.parentNode.appendChild(item);
+    }else{
+        item.classList.remove('clicado');
+        var img = document.getElementById('imagem_' + id);
+        img.classList.add('circle-outline');
+        img.classList.remove('check-circle');
+    }
+}
